@@ -16,6 +16,7 @@ def check_input_param(x_param, y_param):
     :return: либо сообщение о нарушениях в задании входных аргументов и
     возврат False, либо возврат True
     """
+    total = None
     if y_param % 1 != 0 or x_param <= 0 or y_param > 0:
         result = ''
         if x_param <= 0:
@@ -28,29 +29,52 @@ def check_input_param(x_param, y_param):
             result = result + f'\nчисло Y должно быть отрицательным, ваше ' \
                               f'число положительное Y = {y_param}'
         print(result)
-        return False
+        total = False
     else:
-        return True
+        total = True
+    return total
 def pow_with_operator(x_parameters, y_parameters):
     """
     Функция возведения действительного положительного числа в целую
-    отрицатльную степень
+    отрицатльную степень с помощью оператора **
     :param x_parameters: число
     :param y_parameters: степень
-    :return: Возврат значения либо возведение в степень, либо строка ошибки
+    :return: Возврат значения возведения в степень, либо строка ошибки
     """
+    result = None
+    if check_input_param(x_parameters, y_parameters):
+        y_parameters = int(y_parameters)
+        result = x_parameters ** y_parameters
+    else:
+        result = '\nВходные аргументы не корректны!\n'
+    return result
+def pow_with_cycle(x_parameters, y_parameters):
+    """
+    Функция возведения действительного положительного числа в целую
+    отрицатльную степень с помощью цикла
+    :param x_parameters: число
+    :param y_parameters: степень
+    :return: Возврат значения возведения в степень, либо строка ошибки
+    """
+    result = None
     if check_input_param(x_parameters, y_parameters):
         y_param = int(y_parameters)
-        result = x_parameters ** y_parameters
-        return result
+        mult = 1
+        while y_param < 0:
+            mult *= 1 / x_parameters
+            y_param += 1
+        result = mult
     else:
-        return f'\nВходные аргументы не корректны!\n'
-
+        result = '\nВходные аргументы не корректны!\n'
+    return result
 
 first_num = float(input("Введите действительное положительное число x: "))
 second_num = float(input("Введите целое отрицательное число y: "))
 
 print(pow_with_operator(first_num, second_num))
+print(pow_with_cycle(first_num, second_num))
 
 # проверка
-print(pow(2.3, -3))
+# print(pow(2.3, -3))
+# print(pow(4.1, -1))
+# print(pow(1.1, -2))
