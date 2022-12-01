@@ -7,3 +7,27 @@
 введен после нескольких чисел, то вначале нужно добавить сумму этих чисел к
 полученной ранее сумме и после этого завершить программу.
 """
+def get_sum_from_string():
+    """
+    Функция для подсчета суммы вводимых чисел пользователем
+    :return: промежуточные суммы и итоговая сумма
+    """
+    print("Для подсчета промежуточной суммы нажмите 'Enter'")
+    print("Для завершения и получения итоговой суммы нажмите '#'")
+    total = 0
+    may_exit = False
+    while not may_exit:
+        str_of_num = input("Введите числа через пробел: ").split()
+        temp_sum = 0
+        index = 0
+        while index < len(str_of_num):
+            if str_of_num[index] == '#':
+                may_exit = True
+                break
+            temp_sum += int(str_of_num[index])
+            index += 1
+        total += temp_sum
+        print(f'Промежуточная сумма: {temp_sum}')
+    print(f'Итоговая сумма: {total}')
+
+get_sum_from_string()
