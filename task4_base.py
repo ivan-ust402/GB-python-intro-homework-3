@@ -8,3 +8,49 @@
 реализация без оператора возведения в степень, предусматривающая использование
 цикла.
 """
+def check_input_param(x_param, y_param):
+    """
+    Функция валидации входных параметров
+    :param x_param: должно быть действительное положительное число
+    :param y_param: должна быть целая отрицательная степень
+    :return: либо сообщение о нарушениях в задании входных аргументов и
+    возврат False, либо возврат True
+    """
+    if y_param % 1 != 0 or x_param <= 0 or y_param > 0:
+        result = ''
+        if x_param <= 0:
+            result = result + f'\nчисло X не может быть отрицательным, ваше ' \
+                              f'число отрицательное X ={x_param}'
+        if y_param % 1 != 0:
+            result = result + f'\nчисло Y должно быть целым, ваше число не ' \
+                          f'целое: Y = {y_param}'
+        if y_param > 0:
+            result = result + f'\nчисло Y должно быть отрицательным, ваше ' \
+                              f'число положительное Y = {y_param}'
+        print(result)
+        return False
+    else:
+        return True
+def pow_with_operator(x_parameters, y_parameters):
+    """
+    Функция возведения действительного положительного числа в целую
+    отрицатльную степень
+    :param x_parameters: число
+    :param y_parameters: степень
+    :return: Возврат значения либо возведение в степень, либо строка ошибки
+    """
+    if check_input_param(x_parameters, y_parameters):
+        y_param = int(y_parameters)
+        result = x_parameters ** y_parameters
+        return result
+    else:
+        return f'\nВходные аргументы не корректны!\n'
+
+
+first_num = float(input("Введите действительное положительное число x: "))
+second_num = float(input("Введите целое отрицательное число y: "))
+
+print(pow_with_operator(first_num, second_num))
+
+# проверка
+print(pow(2.3, -3))
