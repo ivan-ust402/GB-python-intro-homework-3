@@ -27,6 +27,7 @@ def my_func(num_1, num_2, num_3):
 #     sum_args = my_func(first_arg, second_arg, third_arg)
 #     print(f'Сумма двух наибольших из введенных чисел: {sum_args}')
 
+
 first_arg = int(input("Введите первое число: "))
 second_arg = int(input("Введите второе число: "))
 third_arg = int(input("Введите третье число: "))

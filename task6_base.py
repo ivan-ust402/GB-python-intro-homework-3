@@ -7,6 +7,8 @@ print(int_func(‘text’)) -> Text.
 Сделать вывод исходной строки, но каждое слово должно начинаться с заглавной
 буквы. Необходимо использовать написанную ранее функцию int_func().
 """
+
+
 # def int_func(word):
 #     print(word.title())
 #
@@ -28,6 +30,7 @@ def int_func_single(word):
             result += word[index]
         index += 1
     return result
+
 
 # Функция для строки, без использования int_func_single
 # def int_func_each(string):
@@ -58,6 +61,7 @@ def int_func_each(string):
         result.append(word)
         index += 1
     return " ".join(result)
+
 
 one_word = input("Введите слово маленькими буквами: ")
 print(int_func_single(one_word))

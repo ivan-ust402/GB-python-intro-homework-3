@@ -8,6 +8,8 @@
 реализация без оператора возведения в степень, предусматривающая использование
 цикла.
 """
+
+
 def check_input_param(x_param, y_param):
     """
     Функция валидации входных параметров
@@ -24,7 +26,7 @@ def check_input_param(x_param, y_param):
                               f'число отрицательное X ={x_param}'
         if y_param % 1 != 0:
             result = result + f'\nчисло Y должно быть целым, ваше число не ' \
-                          f'целое: Y = {y_param}'
+                              f'целое: Y = {y_param}'
         if y_param > 0:
             result = result + f'\nчисло Y должно быть отрицательным, ваше ' \
                               f'число положительное Y = {y_param}'
@@ -33,6 +35,8 @@ def check_input_param(x_param, y_param):
     else:
         total = True
     return total
+
+
 def pow_with_operator(x_parameters, y_parameters):
     """
     Функция возведения действительного положительного числа в целую
@@ -48,6 +52,8 @@ def pow_with_operator(x_parameters, y_parameters):
     else:
         result = '\nВходные аргументы не корректны!\n'
     return result
+
+
 def pow_with_cycle(x_parameters, y_parameters):
     """
     Функция возведения действительного положительного числа в целую
@@ -67,6 +73,7 @@ def pow_with_cycle(x_parameters, y_parameters):
     else:
         result = '\nВходные аргументы не корректны!\n'
     return result
+
 
 first_num = float(input("Введите действительное положительное число x: "))
 second_num = float(input("Введите целое отрицательное число y: "))

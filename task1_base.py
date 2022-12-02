@@ -15,6 +15,7 @@ def get_division(numerator, denominator):
         return "Знаменатель не может быть равен нулю"
     return numerator / denominator
 
+
 number_1 = int(input("Введите первое число (числитель): "))
 number_2 = int(input("Введите второе число (знаменатель): "))
 

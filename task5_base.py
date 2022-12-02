@@ -30,4 +30,5 @@ def get_sum_from_string():
         print(f'Промежуточная сумма: {temp_sum}')
     print(f'Итоговая сумма: {total}')
 
+
 get_sum_from_string()
