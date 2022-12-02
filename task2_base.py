@@ -4,6 +4,8 @@
 Функция должна принимать параметры как именованные аргументы. Реализовать вывод
 данных о пользователе одной строкой.
 """
+
+
 def show_user_data(name, surname, birth, city, email, phone):
     """
     Функция выводит данные о пользователе одной строкой
@@ -15,9 +17,12 @@ def show_user_data(name, surname, birth, city, email, phone):
     :param phone: номер телефона
     :return: вывод на экран данных
     """
-    #Ввыводим, как написано в задании, одной строкой без переноса?
-    print(f'Имя: {name}, фамилия: {surname}, дата рождения: {birth}, город '
-          f'проживания: {city}, email: {email}, телефон: {phone}')
+    # Ввыводим, как написано в задании, одной строкой без переноса?
+    # print(f'Имя: {name}, фамилия: {surname}, дата рождения: {birth}, город '
+    #       f'проживания: {city}, email: {email}, телефон: {phone}')
+
+    return ' '.join([name, surname, birth, city, email, phone])
+
 
 user_name = input("Введите имя пользователя: ")
 user_surname = input("Введите фамилию пользователя: ")
@@ -26,9 +31,9 @@ user_city = input("Введите город проживания пользов
 user_email = input("Введите эл. почту пользователя: ")
 user_phone = input("Введите номер телефона пользователя: ")
 
-show_user_data(name=user_name,
-               birth=user_birth,
-               email=user_email,
-               city=user_city,
-               surname=user_surname,
-               phone=user_phone)
+print(show_user_data(name=user_name,
+                     birth=user_birth,
+                     email=user_email,
+                     city=user_city,
+                     surname=user_surname,
+                     phone=user_phone))
